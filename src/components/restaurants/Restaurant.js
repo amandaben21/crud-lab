@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import ReviewsContainer from '../../containers/ReviewsContainer';
 
+//Restaurant component that is responsible for each individual restaurant
 class Restaurant extends Component {
 
-
   render() {
-    const { restaurant } = this.props;
+    const { restaurant, deleteRestaurant } = this.props;
 
     return (
       <div>
         <li>
           {restaurant.text}
-          <button> X </button>
+          <button onClick={() => deleteRestaurant(restaurant.id) }> X </button>
           <ReviewsContainer restaurant={restaurant}/>
         </li>
       </div>
